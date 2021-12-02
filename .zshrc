@@ -115,13 +115,6 @@ setxkbmap -option 'grp:alt_shift_toggle'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 clear
 
-# Node/nvm shit
-export NVM_SYMLINK_CURRENT=true
-
-if [ -d "$HOME/.nvm/current/bin" ] ; then
-	PATH="$HOME/.nvm/current/bin:$PATH"
-fi
-
 # Binaries
 export PATH=$PATH:$HOME/.bin
 
@@ -130,6 +123,8 @@ export PATH="$PATH: pwd /flutter/bin"
 export PATH=$PATH:/opt/Postman/
 export PATH=$PATH:$HOME/bin
 export PATH="$PATH:$HOME/sonar-scanner-4.2.0.1873-linux/bin"
+export PATH="$PATH/.nvm"
+export PATH="$PATH:/usr/local/go/bin"
 export ANDROID_NDK_HOME=$HOME/Android/Sdk/ndk-bundle
 export ANDROID_HOME=$HOME/Android/Sdk
 
@@ -177,3 +172,4 @@ neofetch
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR=$HOME/.sdkman
 [[ -s $HOME/.sdkman/bin/sdkman-init.sh ]] && source $HOME/.sdkman/bin/sdkman-init.sh
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
